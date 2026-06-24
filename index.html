@@ -5,24 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>王耀中｜个人主页</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    :root {
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --text: #2c2c2c;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --border: #e8e8e8;
+      --tag-bg: #f0f0f0;
+      --tag-text: #444;
+      --link: #1a1a1a;
+      --link-border: #ccc;
+      --accent: #2563eb;
+      --project-border: #e0e7ef;
+      --project-bg: #f8fafc;
+      --diagram-bg: #f5f5f5;
+      --card-bg: #ffffff;
     }
 
-    html, body {
-      height: 100%;
+    [data-theme="dark"] {
+      --bg: #111111;
+      --bg-card: #1a1a1a;
+      --text: #e0e0e0;
+      --text-secondary: #aaa;
+      --text-muted: #777;
+      --border: #2a2a2a;
+      --tag-bg: #252525;
+      --tag-text: #bbb;
+      --link: #e0e0e0;
+      --link-border: #555;
+      --accent: #60a5fa;
+      --project-border: #2a2a2a;
+      --project-bg: #161616;
+      --diagram-bg: #1a1a1a;
+      --card-bg: #222222;
     }
 
     body {
       display: flex;
       flex-direction: column;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: #fafafa;
-      color: #2c2c2c;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
+      transition: background 0.3s, color 0.3s;
     }
 
     .container {
@@ -31,158 +61,340 @@
       flex: 1;
       max-width: 960px;
       margin: 0 auto;
-      padding: 48px 32px 60px;
+      padding: 48px 32px 0;
     }
 
-    .main-content {
-      flex: 1;
+    .main-content { flex: 1; }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: background 0.3s, border-color 0.3s;
+      z-index: 100;
     }
+    .theme-toggle:hover { border-color: var(--text-muted); }
 
     /* Header */
-    header {
-      margin-bottom: 36px;
-    }
+    header { margin-bottom: 36px; }
 
     .name {
       font-size: 2.15rem;
       font-weight: 700;
       letter-spacing: 0.03em;
-      color: #1a1a1a;
+      color: var(--text);
     }
 
     .title {
       font-size: 1.08rem;
-      color: #555;
+      color: var(--text-secondary);
       margin-top: 10px;
       font-weight: 400;
     }
 
+    .tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
     .subtitle {
       font-size: 0.88rem;
-      color: #666;
+      color: var(--text-muted);
       margin-top: 8px;
       font-weight: 400;
       line-height: 1.7;
     }
 
     /* Sections */
-    section {
-      margin-bottom: 28px;
-    }
+    section { margin-bottom: 28px; }
 
     .section-label {
       font-size: 1.02rem;
       font-weight: 700;
       letter-spacing: 0.03em;
-      color: #777;
-      font-style: normal;
+      color: var(--text-muted);
       margin-bottom: 10px;
     }
 
     p {
       font-size: 0.98rem;
       line-height: 1.75;
-      color: #3f3f3f;
+      color: var(--text-secondary);
     }
 
-    /* Links */
-    .links {
+    /* Project card */
+    .project-card {
+      border: 1px solid var(--project-border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      background: var(--project-bg);
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .project-header {
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
     }
 
-    .link-item {
+    .project-name {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .project-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 2px 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .project-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px 0;
+    }
+
+    .project-highlights li {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .project-highlights li::before {
+      content: "·";
+      position: absolute;
+      left: 4px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .project-arch {
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+
+    .project-arch img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .project-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 1.02rem;
+      gap: 5px;
+      font-size: 0.88rem;
       font-weight: 500;
-      color: #1a1a1a;
+      color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 2px;
-      transition: border-color 0.2s;
+    }
+    .project-link:hover { text-decoration: underline; }
+    .project-link svg { width: 14px; height: 14px; }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .link-item:hover {
-      border-color: #1a1a1a;
+    .tags-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      width: 100%;
     }
 
-    .link-item svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
+    .tags-group + .tags-group {
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      border-radius: 4px;
+      padding: 3px 10px;
+      letter-spacing: 0.02em;
+      transition: background 0.3s, color 0.3s;
     }
 
     /* Footer */
     footer {
       margin-top: 36px;
-      padding-top: 20px;
-      border-top: 1px solid #e8e8e8;
-      font-size: 0.8rem;
-      color: #aaa;
+      padding: 20px 0 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .footer-link:hover { color: var(--text); border-color: var(--text); }
+    .footer-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
     }
 
     /* Responsive */
     @media (max-width: 480px) {
-      .container {
-        padding: 40px 20px 40px;
-      }
-      .name {
-        font-size: 1.6rem;
-      }
-      .section-label {
-        font-size: 0.82rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-      .link-item {
-        font-size: 0.98rem;
-      }
+      .container { padding: 40px 20px 0; }
+      .name { font-size: 1.6rem; }
+      .section-label { font-size: 0.82rem; }
+      p { font-size: 1rem; }
+      .theme-toggle { top: 12px; right: 14px; width: 36px; height: 36px; font-size: 16px; }
+      .project-card { padding: 16px 18px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
 
+  <div class="container">
     <div class="main-content">
+
       <header>
         <h1 class="name">王耀中</h1>
         <p class="title">大模型应用算法工程师</p>
+        <p class="tagline">LLM Application Engineer · Agent Systems</p>
         <p class="subtitle">关注大模型应用、智能体系统与多模态工程化实践。</p>
       </header>
 
       <section>
-        <div class="section-label">教育背景</div>
-        <p>2022 年毕业于西安理工大学，软件工程专业，硕士研究生。</p>
-      </section>
-
-      <section>
         <div class="section-label">简介</div>
-        <p>关注大模型应用落地、智能体系统、RAG 检索增强、多模态理解与工程化实践。具备计算机视觉算法、实时感知系统部署、Python / C++ / FastAPI 工程开发经验。</p>
+        <p>现就职于京东物流，围绕物流场景开展 AI 应用落地。前期负责 <strong>CV 视觉感知与边缘侧部署</strong>，基于 YOLO、DeepStream、TensorRT 构建多路视频实时推理链路，每台边缘设备覆盖 20 路摄像头，支撑园区安防与仓储巡检；近阶段重点转向 <strong>大模型应用与 Agent 实践</strong>，参与 RAG 知识问答、工业运维 Agent、园区 VLM 验证等多个 AI 系统建设，具备从业务需求拆解、算法验证到工程部署的完整链路经验。当前关注 Agent Harness 工程化、上下文压缩与记忆管理、多模态大模型应用及端侧小模型部署。</p>
       </section>
 
       <section>
-        <div class="section-label">当前关注</div>
-        <p>智能体工程化、多模态大模型应用、端侧小模型部署，以及大模型在工业和物流场景中的落地。</p>
-      </section>
-
-      <section>
-        <div class="section-label">链接</div>
-        <div class="links">
-          <a class="link-item" href="https://github.com/yaozhongai" target="_blank" rel="noopener noreferrer">
+        <div class="section-label">项目</div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-name">Nexa Agent</span>
+          </div>
+          <p class="project-desc">基于 LangGraph 构建的自进化智能体系统，采用 ReAct + Reflexion 双层循环架构，集成 9 种工具、多模型动态路由、分层记忆与混合检索，并配备 Verifier 事实网关与自研 Trace 可观测链路，面向通用任务的端到端 Agent。</p>
+          <div class="project-arch">
+            <img src="nexa-arch.svg" alt="Nexa Agent Architecture Diagram" />
+          </div>
+          <a class="project-link" href="https://github.com/yaozhongai/Nexa-Agent" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
+            GitHub Repo →
           </a>
         </div>
       </section>
-    </div>
-    <footer>
-      &copy; 2026 王耀中
-    </footer>
 
+      <section>
+        <div class="section-label">技术栈</div>
+        <div class="tags">
+          <div class="tags-group">
+            <span class="tag">LangGraph</span>
+            <span class="tag">ReAct</span>
+            <span class="tag">Reflexion</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Tool Calling</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Milvus</span>
+          </div>
+          <div class="tags-group">
+            <span class="tag">TensorRT</span>
+            <span class="tag">DeepStream</span>
+            <span class="tag">YOLO</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      <p class="footer-meta">西安理工大学 软件工程硕士（2019–2022）· 发明专利 2 项（均已授权）· EI 论文 1 篇一作</p>
+      <div class="footer-links">
+        <a class="footer-link" href="https://github.com/yaozhongai" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a class="footer-link" href="mailto:wyz931216309@163.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          wyz931216309@163.com
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2026 王耀中</p>
+    </footer>
   </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>
