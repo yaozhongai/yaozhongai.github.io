@@ -3,7 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="王耀中，大模型应用算法工程师。关注 Agent 系统、RAG 与多模态应用；个人项目 OfferCheck——求职尽调 Agent，提供在线 Demo。">
   <title>王耀中｜个人主页</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='sans-serif'>%E7%8E%8B</text></svg>">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yaozhongai.github.io/">
+  <meta property="og:title" content="王耀中｜大模型应用算法工程师">
+  <meta property="og:description" content="Agent 系统 / RAG / 多模态；个人项目 OfferCheck——求职尽调 Agent，附在线 Demo。">
+  <meta property="og:image" content="https://yaozhongai.github.io/og-card.png">
+  <meta property="og:image:width" content="2400">
+  <meta property="og:image:height" content="1260">
+  <meta property="og:image:alt" content="王耀中 · 大模型应用算法工程师 · OfferCheck 求职尽调 Agent">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="王耀中｜大模型应用算法工程师">
+  <meta name="twitter:description" content="Agent 系统 / RAG / 多模态；个人项目 OfferCheck——求职尽调 Agent，附在线 Demo。">
+  <meta name="twitter:image" content="https://yaozhongai.github.io/og-card.png">
+
+  <script>
+    // 主题预置：首帧前设定 data-theme，避免暗色用户看到白闪
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; }
@@ -13,17 +41,20 @@
       --bg-card: #ffffff;
       --text: #2c2c2c;
       --text-secondary: #555;
-      --text-muted: #888;
+      --text-muted: #6b6b6b;
       --border: #e8e8e8;
       --tag-bg: #f0f0f0;
       --tag-text: #444;
       --link: #1a1a1a;
       --link-border: #ccc;
       --accent: #2563eb;
+      /* --text-muted 覆盖：#888→#6b6b6b，对 #fafafa ≈5:1 过 WCAG AA */
       --project-border: #e0e7ef;
       --project-bg: #f8fafc;
       --diagram-bg: #f5f5f5;
       --card-bg: #ffffff;
+      --gate-bg: #f7e9e2;
+      --brand-strong: #A94A2C;
     }
 
     [data-theme="dark"] {
@@ -31,7 +62,7 @@
       --bg-card: #1a1a1a;
       --text: #e0e0e0;
       --text-secondary: #aaa;
-      --text-muted: #777;
+      --text-muted: #8a8a8a;
       --border: #2a2a2a;
       --tag-bg: #252525;
       --tag-text: #bbb;
@@ -42,6 +73,8 @@
       --project-bg: #161616;
       --diagram-bg: #1a1a1a;
       --card-bg: #222222;
+      --gate-bg: #33211a;
+      --brand-strong: #E8926B;
     }
 
     body {
@@ -103,22 +136,6 @@
       font-weight: 400;
     }
 
-    .tagline {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-    }
-
-    .subtitle {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-      font-weight: 400;
-      line-height: 1.7;
-    }
-
     /* Sections */
     section { margin-bottom: 28px; }
 
@@ -134,6 +151,28 @@
       font-size: 0.98rem;
       line-height: 1.75;
       color: var(--text-secondary);
+    }
+
+    .intro-list {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0;
+    }
+
+    .intro-list li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .intro-list li::before {
+      content: "·";
+      position: absolute;
+      left: 4px;
+      color: var(--text-muted);
+      font-weight: 700;
     }
 
     /* Project card */
@@ -169,6 +208,9 @@
       letter-spacing: 0.04em;
     }
 
+    a.project-badge { text-decoration: none; transition: background 0.2s, color 0.2s; }
+    a.project-badge:hover { background: var(--accent); color: #fff; }
+
     .project-desc {
       font-size: 0.92rem;
       color: var(--text-secondary);
@@ -176,26 +218,51 @@
       margin-bottom: 12px;
     }
 
-    .project-highlights {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 14px 0;
+    .project-title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
     }
 
-    .project-highlights li {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .project-highlights li::before {
-      content: "·";
-      position: absolute;
-      left: 4px;
+    .project-note {
+      font-size: 0.78rem;
       color: var(--text-muted);
-      font-weight: 700;
+    }
+
+    .project-caption {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 12px 0 0;
+    }
+
+    .project-features {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .feature-row {
+      display: flex;
+      gap: 10px;
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .feature-name {
+      flex: none;
+      width: 5.5em;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .feature-desc { color: var(--text-secondary); }
+
+    .project-impl {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
     }
 
     .project-arch {
@@ -206,7 +273,8 @@
       background: var(--bg-card);
     }
 
-    .project-arch img {
+    .project-arch img,
+    .project-arch svg {
       display: block;
       width: 100%;
       height: auto;
@@ -223,6 +291,12 @@
     }
     .project-link:hover { text-decoration: underline; }
     .project-link svg { width: 14px; height: 14px; }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
     /* Tags */
     .tags {
@@ -253,6 +327,15 @@
       transition: background 0.3s, color 0.3s;
     }
 
+    .tags-label {
+      width: 100%;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
     /* Footer */
     footer {
       margin-top: 36px;
@@ -261,8 +344,8 @@
     }
 
     .footer-meta {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+      font-size: 0.88rem;
+      color: var(--text-secondary);
       line-height: 1.7;
       margin-bottom: 12px;
     }
@@ -313,50 +396,73 @@
 
       <header>
         <h1 class="name">王耀中</h1>
-        <p class="title">大模型应用算法工程师</p>
-        <p class="tagline">LLM Application Engineer · Agent Systems</p>
-        <p class="subtitle">关注大模型应用、智能体系统与多模态工程化实践。</p>
+        <p class="title">大模型应用算法工程师 · Agent Systems</p>
       </header>
 
       <section>
-        <div class="section-label">简介</div>
-        <p>现就职于京东物流，围绕物流场景开展 AI 应用落地。前期负责 <strong>CV 视觉感知与边缘侧部署</strong>，基于 YOLO、DeepStream、TensorRT 构建多路视频实时推理链路，每台边缘设备覆盖 20 路摄像头，支撑园区安防与仓储巡检；近阶段重点转向 <strong>大模型应用与 Agent 实践</strong>，参与 RAG 知识问答、工业运维 Agent、园区 VLM 验证等多个 AI 系统建设，具备从业务需求拆解、算法验证到工程部署的完整链路经验。当前关注 Agent Harness 工程化、上下文压缩与记忆管理、多模态大模型应用及端侧小模型部署。</p>
+        <h2 class="section-label">简介</h2>
+        <p>现就职于京东物流，负责物流场景的 AI 应用落地。</p>
+        <ul class="intro-list">
+          <li>前期负责 CV 视觉感知与边缘侧部署，落地多路视频实时推理链路</li>
+          <li>近期转向大模型应用与 Agent 实践，参与 RAG 知识问答、工业运维 Agent 等系统</li>
+          <li>当前关注：Agent 可靠性工程、上下文与记忆管理、多模态应用</li>
+        </ul>
       </section>
 
       <section>
-        <div class="section-label">项目</div>
+        <h2 class="section-label">项目</h2>
         <div class="project-card">
           <div class="project-header">
-            <span class="project-name">Nexa Agent</span>
+            <div class="project-title-group">
+              <h3 class="project-name">OfferCheck</h3>
+              <span class="project-note">个人项目</span>
+            </div>
+            <a class="project-badge" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">在线 Demo</a>
           </div>
-          <p class="project-desc">基于 LangGraph 构建的自进化智能体系统，采用 ReAct + Reflexion 双层循环架构，集成 9 种工具、多模型动态路由、分层记忆与混合检索，并配备 Verifier 事实网关与自研 Trace 可观测链路，面向通用任务的端到端 Agent。</p>
-          <div class="project-arch">
-            <img src="nexa-arch.svg" alt="Nexa Agent Architecture Diagram" />
+          <p class="project-desc">求职尽调 Agent：对一个具体求职机会自主上网做多源交叉调查，输出「可信 / 存疑 / 疑似骗局」三态裁定与证据链——无证据，不裁定。</p>
+          <div class="project-features">
+            <div class="feature-row"><span class="feature-name">职位调研</span><span class="feature-desc">核实公司经营真实性、资金与团队背景，识别幽灵岗位</span></div>
+            <div class="feature-row"><span class="feature-name">简历匹配</span><span class="feature-desc">对照 JD 定位简历差距，给出针对性修改清单</span></div>
+            <div class="feature-row"><span class="feature-name">话术核查</span><span class="feature-desc">核实招聘方身份，识别提前收费、免面试录用等危险信号</span></div>
+            <div class="feature-row"><span class="feature-name">Offer 核验</span><span class="feature-desc">交叉验证并主动寻找反证，输出裁定、证据链与待确认事项</span></div>
           </div>
-          <a class="project-link" href="https://github.com/yaozhongai/Nexa-Agent" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub Repo →
-          </a>
+          <p class="project-impl">实现：ReAct × Reflexion 双循环 · 原生 Function Calling · 12 种调查工具 · 强制证据门与事实核验，细节见架构图与 GitHub</p>
+          <div class="project-arch" id="archDiagram">
+            <img src="nexa-arch.svg" alt="OfferCheck 架构图" />
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              在线 Demo →
+            </a>
+            <a class="project-link" href="https://github.com/yaozhongai/OfferCheck" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub →
+            </a>
+          </div>
+          <p class="project-caption">在线 Demo 为「无界造物节 Buildless Limits」参赛作品，界面为英文。</p>
         </div>
       </section>
 
       <section>
-        <div class="section-label">技术栈</div>
+        <h2 class="section-label">技术栈</h2>
         <div class="tags">
           <div class="tags-group">
-            <span class="tag">LangGraph</span>
+            <span class="tags-label">Agent · LLM</span>
             <span class="tag">ReAct</span>
             <span class="tag">Reflexion</span>
-            <span class="tag">RAG</span>
             <span class="tag">Tool Calling</span>
+            <span class="tag">RAG</span>
             <span class="tag">MCP</span>
             <span class="tag">Milvus</span>
           </div>
           <div class="tags-group">
+            <span class="tags-label">工程 · CV</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Next.js</span>
             <span class="tag">TensorRT</span>
             <span class="tag">DeepStream</span>
             <span class="tag">YOLO</span>
-            <span class="tag">FastAPI</span>
             <span class="tag">Python</span>
             <span class="tag">C++</span>
           </div>
@@ -384,17 +490,20 @@
   <script>
     const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.setAttribute('data-theme', 'dark');
-      toggle.textContent = '☀️';
-    }
+    // data-theme 已在 <head> 预置，这里只同步按钮图标
+    toggle.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
     toggle.addEventListener('click', () => {
       const isDark = html.getAttribute('data-theme') === 'dark';
       html.setAttribute('data-theme', isDark ? 'light' : 'dark');
       toggle.textContent = isDark ? '🌙' : '☀️';
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
+
+    // 架构图行内注入：<img> 内的 SVG 取不到页面 CSS 变量，行内后可跟随明暗主题；失败则保留 <img> 兜底
+    fetch('nexa-arch.svg')
+      .then(r => r.ok ? r.text() : Promise.reject())
+      .then(svg => { document.getElementById('archDiagram').innerHTML = svg; })
+      .catch(() => {});
   </script>
 </body>
 </html>
