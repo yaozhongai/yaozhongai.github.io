@@ -294,13 +294,6 @@
       margin: 12px 0 0;
     }
 
-    .project-hook {
-      margin-bottom: 8px;
-      color: var(--text);
-      font-size: 1.08rem;
-      font-weight: 700;
-    }
-
     .project-features {
       display: grid;
       gap: 7px;
@@ -323,30 +316,20 @@
 
     .feature-desc { color: var(--text-secondary); }
 
-    .project-impl {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .project-arch {
+    .project-visual {
+      display: block;
       margin: 16px 0;
       border: 1px solid var(--border);
       border-radius: 8px;
       overflow: hidden;
       background: var(--bg-card);
+      transition: border-color 0.2s, transform 0.2s;
     }
 
-    .arch-details { margin: 16px 0; }
-    .arch-details summary {
-      cursor: pointer;
-      color: var(--accent);
-      font-size: 0.84rem;
-      font-weight: 600;
-      list-style-position: inside;
+    .project-visual:hover {
+      border-color: var(--text-muted);
+      transform: translateY(-1px);
     }
-    .arch-details[open] summary { margin-bottom: 10px; }
 
     .experience-grid {
       display: grid;
@@ -398,8 +381,7 @@
     }
     .experience-link:hover { text-decoration: underline; }
 
-    .project-arch img,
-    .project-arch svg {
+    .project-visual img {
       display: block;
       width: 100%;
       height: auto;
@@ -527,14 +509,14 @@
         </div>
         <div class="quick-facts" aria-label="个人亮点">
           <div class="quick-fact"><strong>WAIC 2026 决赛</strong><span>OfferCheck · 无界造物节</span></div>
-          <div class="quick-fact"><strong>工业 RAG / VLM</strong><span>前京东物流算法工程师</span></div>
+          <div class="quick-fact"><strong>工业 RAG / VLM</strong><span>前京东算法工程师</span></div>
           <div class="quick-fact"><strong>第一发明人专利 2 项</strong><span>另有授权发明专利 2 项 · IEEE 一作</span></div>
         </div>
       </header>
 
       <section>
         <h2 class="section-label">关于我</h2>
-        <p>算法工程师，曾就职于京东物流。早期主要从事计算机视觉算法研发与边缘部署，之后转向工业场景的大模型应用开发，先后参与 RAG 知识问答、VLM 巡检验证与 Agent 实践。目前主要投入 Nexa Agent 与 OfferCheck 的研发。</p>
+        <p>算法工程师，曾就职于京东，关注智能系统在复杂业务场景中的落地与演进。技术方向横跨边缘智能、计算机视觉与大模型应用，目前聚焦 Agent、RAG 和多模态系统，致力于构建兼具推理能力、工程可靠性与实际价值的 AI 产品。</p>
       </section>
 
       <section>
@@ -548,21 +530,15 @@
             <a class="project-badge" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">在线 Demo</a>
           </div>
           <p class="project-award">2026 世界人工智能大会（WAIC）<span class="nowrap">无界造物节决赛入围作品</span></p>
-          <p class="project-hook">公司是真的，不代表联系你的这次机会也是真的。</p>
-          <p class="project-desc">OfferCheck 是一款求职机会核验 Agent。用户提交 Offer、JD、招聘消息或截图后，它会针对这一次具体接触自主调查、主动寻找反证，输出「可信 / 存疑 / 高度疑似诈骗」三级判断、证据链和待确认事项。</p>
+          <p class="project-desc"><strong>OfferCheck 是一款求职机会核验 Agent。</strong>用户提交 Offer、JD、招聘消息或截图后，系统会围绕具体机会自主调查、交叉验证并主动寻找反证，最终给出「可信 / 存疑 / 高度疑似诈骗」判断及证据链。</p>
           <div class="project-features">
-            <div class="feature-row"><span class="feature-name">具体机会</span><span class="feature-desc">不只判断公司是否存在，还核对招聘方身份、邮箱域名、招聘流程与资金要求</span></div>
-            <div class="feature-row"><span class="feature-name">证据约束</span><span class="feature-desc">没有成功检索就不能提交裁定；引用与本轮真实访问记录逐条对账</span></div>
-            <div class="feature-row"><span class="feature-name">自主调查</span><span class="feature-desc">ReAct 根据新证据动态决定下一步，Reflexion 在失败后提取教训并重试</span></div>
-            <div class="feature-row"><span class="feature-name">全程复用</span><span class="feature-desc">岗位调研、简历匹配、招聘沟通和 Offer 核验共享同一调查引擎与 Case 上下文</span></div>
+            <div class="feature-row"><span class="feature-name">机会级核验</span><span class="feature-desc">核对公司、招聘方身份、邮箱域名、招聘流程与资金要求</span></div>
+            <div class="feature-row"><span class="feature-name">证据约束</span><span class="feature-desc">无有效检索不裁定，引用与真实访问记录逐条对账</span></div>
+            <div class="feature-row"><span class="feature-name">自主调查</span><span class="feature-desc">ReAct 动态取证，Reflexion 在失败后调整策略并重试</span></div>
           </div>
-          <p class="project-impl">个人独立完成核心引擎、FastAPI/SSE 服务、Next.js 前端与评测框架。模型负责推理，系统负责工具编排、证据门控、引用审计、事实核验与失败重试。</p>
-          <details class="arch-details">
-            <summary>展开查看系统架构</summary>
-            <div class="project-arch" id="archDiagram">
-              <img src="nexa-arch.svg" alt="OfferCheck 架构图：多模态输入进入 Nexa ReAct 与 Reflexion 调查循环，经证据门和事实核验后输出三级风险判断" />
-            </div>
-          </details>
+          <a class="project-visual" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer" aria-label="打开 OfferCheck 在线 Demo">
+            <img src="offercheck-promo.png" alt="OfferCheck 产品界面：围绕具体求职机会开展多源调查、独立复核并输出附带证据的风险结论" loading="lazy" />
+          </a>
           <div class="project-links">
             <a class="project-link" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
@@ -581,9 +557,9 @@
       <section>
         <h2 class="section-label">工程经历</h2>
         <div class="experience-heading">
-          <h3>京东物流｜算法工程师</h3>
+          <h3>京东｜算法工程师</h3>
           <span class="experience-meta">2022.07–2026.06 · 北京</span>
-          <p>负责物流仓储场景的 AI 算法研发，技术方向从计算机视觉与边缘部署逐步延伸到 RAG、VLM 和 Agent 应用。</p>
+          <p>面向京东仓储与智能设备场景，参与并推动多类 AI 系统的研发与落地，围绕复杂现场环境中的感知、推理和系统协同解决关键技术问题；技术方向由边缘智能逐步拓展至 RAG、VLM 与 Agent，并持续关注智能体框架的工程实现与演进。</p>
         </div>
         <div class="experience-grid">
           <article class="experience-card">
@@ -592,9 +568,9 @@
             <p>主导工业运维 RAG 知识问答系统，从文档解析、知识切分、混合检索、重排、Prompt 优化到服务落地；同时开展 VLM 巡检验证与 Agent 应用实践。检索评测部分从项目中拆出为<a class="experience-link" href="https://github.com/yaozhongai/rag-retrieval-eval" target="_blank" rel="noopener noreferrer">公开评测子模块</a>。</p>
           </article>
           <article class="experience-card">
-            <h3>视觉算法与边缘部署</h3>
+            <h3>边缘智能研发</h3>
             <span class="experience-meta">CV · TensorRT · DeepStream · NNIE</span>
-            <p>负责物流园区安全监管场景的视觉算法研发，覆盖模型训练、推理优化、NVIDIA 与海思平台部署及现场交付，并搭建多路视频实时分析链路。</p>
+            <p>面向物流园区与仓储设备场景开展边缘智能研发，覆盖视觉感知、推理性能优化与实时分析系统建设，推动算法在 NVIDIA、海思等异构平台及复杂现场环境中稳定运行。</p>
           </article>
         </div>
       </section>
@@ -666,11 +642,6 @@
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
 
-    // 架构图行内注入：<img> 内的 SVG 取不到页面 CSS 变量，行内后可跟随明暗主题；失败则保留 <img> 兜底
-    fetch('nexa-arch.svg')
-      .then(r => r.ok ? r.text() : Promise.reject())
-      .then(svg => { document.getElementById('archDiagram').innerHTML = svg; })
-      .catch(() => {});
   </script>
 </body>
 </html>
