@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="王耀中，大模型应用算法工程师。关注 Agent 系统、RAG 与多模态应用；个人项目 OfferCheck——求职尽调 Agent，提供在线 Demo。">
-  <title>王耀中｜个人主页</title>
+  <meta name="description" content="王耀中，大模型应用算法工程师，关注 Agent、RAG 与多模态应用。个人项目 OfferCheck 入围 2026 WAIC 无界造物节决赛。">
+  <title>王耀中｜大模型应用算法工程师</title>
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='sans-serif'>%E7%8E%8B</text></svg>">
 
@@ -12,14 +12,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yaozhongai.github.io/">
   <meta property="og:title" content="王耀中｜大模型应用算法工程师">
-  <meta property="og:description" content="Agent 系统 / RAG / 多模态；个人项目 OfferCheck——求职尽调 Agent，附在线 Demo。">
+  <meta property="og:description" content="Agent / RAG / 多模态；OfferCheck 入围 2026 WAIC 无界造物节决赛。">
   <meta property="og:image" content="https://yaozhongai.github.io/og-card.png">
   <meta property="og:image:width" content="2400">
   <meta property="og:image:height" content="1260">
-  <meta property="og:image:alt" content="王耀中 · 大模型应用算法工程师 · OfferCheck 求职尽调 Agent">
+  <meta property="og:image:alt" content="王耀中 · 大模型应用算法工程师 · OfferCheck 求职机会核验 Agent">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="王耀中｜大模型应用算法工程师">
-  <meta name="twitter:description" content="Agent 系统 / RAG / 多模态；个人项目 OfferCheck——求职尽调 Agent，附在线 Demo。">
+  <meta name="twitter:description" content="Agent / RAG / 多模态；OfferCheck 入围 2026 WAIC 无界造物节决赛。">
   <meta name="twitter:image" content="https://yaozhongai.github.io/og-card.png">
 
   <script>
@@ -92,7 +92,7 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      max-width: 960px;
+      max-width: 1024px;
       margin: 0 auto;
       padding: 48px 32px 0;
     }
@@ -120,7 +120,7 @@
     .theme-toggle:hover { border-color: var(--text-muted); }
 
     /* Header */
-    header { margin-bottom: 36px; }
+    header { margin-bottom: 44px; max-width: 820px; }
 
     .name {
       font-size: 2.15rem;
@@ -130,14 +130,63 @@
     }
 
     .title {
-      font-size: 1.08rem;
+      font-size: 1.12rem;
       color: var(--text-secondary);
       margin-top: 10px;
-      font-weight: 400;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 8px 15px;
+      color: var(--text);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .button:hover { transform: translateY(-1px); border-color: var(--text-muted); }
+    .button-primary { color: #fff; background: var(--accent); border-color: var(--accent); }
+    .button-primary:hover { background: color-mix(in srgb, var(--accent) 88%, #000); border-color: transparent; }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .quick-fact {
+      padding: 12px 14px;
+      border-left: 2px solid var(--border);
+    }
+
+    .quick-fact strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.88rem;
+    }
+
+    .quick-fact span {
+      color: var(--text-muted);
+      font-size: 0.76rem;
     }
 
     /* Sections */
-    section { margin-bottom: 28px; }
+    section { margin-bottom: 38px; }
 
     .section-label {
       font-size: 1.02rem;
@@ -179,7 +228,7 @@
     .project-card {
       border: 1px solid var(--project-border);
       border-radius: 10px;
-      padding: 20px 24px;
+      padding: 26px 28px;
       background: var(--project-bg);
       transition: background 0.3s, border-color 0.3s;
     }
@@ -221,7 +270,7 @@
     .project-award .nowrap { white-space: nowrap; }
 
     .project-desc {
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: var(--text-secondary);
       line-height: 1.7;
       margin-bottom: 12px;
@@ -243,6 +292,13 @@
       color: var(--text-muted);
       line-height: 1.6;
       margin: 12px 0 0;
+    }
+
+    .project-hook {
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 1.08rem;
+      font-weight: 700;
     }
 
     .project-features {
@@ -281,6 +337,66 @@
       overflow: hidden;
       background: var(--bg-card);
     }
+
+    .arch-details { margin: 16px 0; }
+    .arch-details summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 600;
+      list-style-position: inside;
+    }
+    .arch-details[open] summary { margin-bottom: 10px; }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .experience-heading {
+      margin-bottom: 12px;
+      padding: 18px 20px;
+      background: var(--project-bg);
+      border: 1px solid var(--project-border);
+      border-radius: 9px;
+    }
+
+    .experience-heading h3 {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .experience-heading p { font-size: 0.88rem; }
+
+    .experience-card {
+      padding: 18px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    .experience-card h3 {
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .experience-card p { font-size: 0.87rem; }
+
+    .experience-meta {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    .experience-link {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .experience-link:hover { text-decoration: underline; }
 
     .project-arch img,
     .project-arch svg {
@@ -394,6 +510,11 @@
       p { font-size: 1rem; }
       .theme-toggle { top: 12px; right: 14px; width: 36px; height: 36px; font-size: 16px; }
       .project-card { padding: 16px 18px; }
+      .quick-facts, .experience-grid { grid-template-columns: 1fr 1fr; }
+      .project-header { align-items: flex-start; gap: 12px; }
+      .project-title-group { flex-wrap: wrap; gap: 4px 8px; }
+      .feature-row { display: block; }
+      .feature-name { display: block; width: auto; margin-bottom: 1px; }
     }
   </style>
 </head>
@@ -406,40 +527,49 @@
       <header>
         <h1 class="name">王耀中</h1>
         <p class="title">大模型应用算法工程师 · Agent · 多模态</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">体验 OfferCheck</a>
+          <a class="button" href="https://github.com/yaozhongai" target="_blank" rel="noopener noreferrer">查看 GitHub</a>
+          <a class="button" href="mailto:wyz931216309@163.com">联系我</a>
+        </div>
+        <div class="quick-facts" aria-label="个人亮点">
+          <div class="quick-fact"><strong>WAIC 2026 决赛</strong><span>OfferCheck · 无界造物节</span></div>
+          <div class="quick-fact"><strong>工业 RAG / VLM</strong><span>前京东物流算法工程师</span></div>
+          <div class="quick-fact"><strong>第一发明人专利 2 项</strong><span>另有授权发明专利 2 项 · IEEE 一作</span></div>
+        </div>
       </header>
 
       <section>
-        <h2 class="section-label">简介</h2>
-        <p>算法工程师，前京东物流。目前全职投入 Agent 系统研发（Nexa Agent / OfferCheck）。</p>
-        <ul class="intro-list">
-          <li>当前关注：Agent 可靠性工程、上下文与记忆管理、多模态应用</li>
-          <li>此前在京东物流主导工业运维 RAG 知识问答系统，并延伸 VLM 巡检验证与 Agent 实践</li>
-          <li>更早负责 CV 视觉感知与边缘侧部署，落地多路视频实时推理链路</li>
-        </ul>
+        <h2 class="section-label">关于我</h2>
+        <p>算法工程师，曾就职于京东物流。早期主要从事计算机视觉算法研发与边缘部署，之后转向工业场景的大模型应用开发，先后参与 RAG 知识问答、VLM 巡检验证与 Agent 实践。目前主要投入 Nexa Agent 与 OfferCheck 的研发。</p>
       </section>
 
       <section>
-        <h2 class="section-label">项目</h2>
+        <h2 class="section-label">代表项目</h2>
         <div class="project-card">
           <div class="project-header">
             <div class="project-title-group">
               <h3 class="project-name">OfferCheck</h3>
-              <span class="project-note">个人项目</span>
+              <span class="project-note">Nexa Agent 的首个垂直应用</span>
             </div>
             <a class="project-badge" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">在线 Demo</a>
           </div>
-          <p class="project-award">入围 2026 世界人工智能大会（WAIC）<span class="nowrap">无界造物节决赛</span></p>
-          <p class="project-desc">求职尽调 Agent：对一个具体求职机会自主上网做多源交叉调查，输出「可信 / 存疑 / 疑似骗局」三态裁定与证据链——无证据，不裁定。</p>
+          <p class="project-award">2026 世界人工智能大会（WAIC）<span class="nowrap">无界造物节决赛入围作品</span></p>
+          <p class="project-hook">公司是真的，不代表联系你的这次机会也是真的。</p>
+          <p class="project-desc">OfferCheck 是一款求职机会核验 Agent。用户提交 Offer、JD、招聘消息或截图后，它会针对这一次具体接触自主调查、主动寻找反证，输出「可信 / 存疑 / 高度疑似诈骗」三级判断、证据链和待确认事项。</p>
           <div class="project-features">
-            <div class="feature-row"><span class="feature-name">职位调研</span><span class="feature-desc">核实公司经营真实性、资金与团队背景，识别幽灵岗位</span></div>
-            <div class="feature-row"><span class="feature-name">简历匹配</span><span class="feature-desc">对照 JD 定位简历差距，给出针对性修改清单</span></div>
-            <div class="feature-row"><span class="feature-name">话术核查</span><span class="feature-desc">核实招聘方身份，识别提前收费、免面试录用等危险信号</span></div>
-            <div class="feature-row"><span class="feature-name">Offer 核验</span><span class="feature-desc">交叉验证并主动寻找反证，输出裁定、证据链与待确认事项</span></div>
+            <div class="feature-row"><span class="feature-name">具体机会</span><span class="feature-desc">不只判断公司是否存在，还核对招聘方身份、邮箱域名、招聘流程与资金要求</span></div>
+            <div class="feature-row"><span class="feature-name">证据约束</span><span class="feature-desc">没有成功检索就不能提交裁定；引用与本轮真实访问记录逐条对账</span></div>
+            <div class="feature-row"><span class="feature-name">自主调查</span><span class="feature-desc">ReAct 根据新证据动态决定下一步，Reflexion 在失败后提取教训并重试</span></div>
+            <div class="feature-row"><span class="feature-name">全程复用</span><span class="feature-desc">岗位调研、简历匹配、招聘沟通和 Offer 核验共享同一调查引擎与 Case 上下文</span></div>
           </div>
-          <p class="project-impl">实现：ReAct × Reflexion 双循环 · 原生 Function Calling · 12 种调查工具 · 强制证据门与事实核验，细节见架构图与 GitHub</p>
-          <div class="project-arch" id="archDiagram">
-            <img src="nexa-arch.svg" alt="OfferCheck 架构图" />
-          </div>
+          <p class="project-impl">个人独立完成核心引擎、FastAPI/SSE 服务、Next.js 前端与评测框架。模型负责推理，系统负责工具编排、证据门控、引用审计、事实核验与失败重试。</p>
+          <details class="arch-details">
+            <summary>展开查看系统架构</summary>
+            <div class="project-arch" id="archDiagram">
+              <img src="nexa-arch.svg" alt="OfferCheck 架构图：多模态输入进入 Nexa ReAct 与 Reflexion 调查循环，经证据门和事实核验后输出三级风险判断" />
+            </div>
+          </details>
           <div class="project-links">
             <a class="project-link" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
@@ -450,7 +580,29 @@
               GitHub →
             </a>
           </div>
-          <p class="project-caption">在线 Demo 为决赛参赛作品，面向海外市场，界面为英文。</p>
+          <p class="project-caption">在线 Demo 面向海外求职场景，界面为英文；建议使用测试案例体验完整调查过程。</p>
+        </div>
+
+      </section>
+
+      <section>
+        <h2 class="section-label">工程经历</h2>
+        <div class="experience-heading">
+          <h3>京东物流｜算法工程师</h3>
+          <span class="experience-meta">2022.07–2026.06 · 北京</span>
+          <p>负责物流仓储场景的 AI 算法研发，技术方向从计算机视觉与边缘部署逐步延伸到 RAG、VLM 和 Agent 应用。</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <h3>大模型应用</h3>
+            <span class="experience-meta">RAG · VLM · Agent</span>
+            <p>主导工业运维 RAG 知识问答系统，从文档解析、知识切分、混合检索、重排、Prompt 优化到服务落地；同时开展 VLM 巡检验证与 Agent 应用实践。检索评测部分从项目中拆出为<a class="experience-link" href="https://github.com/yaozhongai/rag-retrieval-eval" target="_blank" rel="noopener noreferrer">公开评测子模块</a>。</p>
+          </article>
+          <article class="experience-card">
+            <h3>视觉算法与边缘部署</h3>
+            <span class="experience-meta">CV · TensorRT · DeepStream · NNIE</span>
+            <p>负责物流园区安全监管场景的视觉算法研发，覆盖模型训练、推理优化、NVIDIA 与海思平台部署及现场交付，并搭建多路视频实时分析链路。</p>
+          </article>
         </div>
       </section>
 
@@ -458,23 +610,36 @@
         <h2 class="section-label">技术栈</h2>
         <div class="tags">
           <div class="tags-group">
-            <span class="tags-label">Agent · LLM</span>
+            <span class="tags-label">Agent 工程</span>
             <span class="tag">ReAct</span>
             <span class="tag">Reflexion</span>
             <span class="tag">Tool Calling</span>
-            <span class="tag">RAG</span>
-            <span class="tag">MCP</span>
-            <span class="tag">Milvus</span>
+            <span class="tag">Eval Harness</span>
+            <span class="tag">Trace / SSE</span>
           </div>
           <div class="tags-group">
-            <span class="tags-label">工程 · CV</span>
+            <span class="tags-label">LLM · 多模态</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Hybrid Retrieval</span>
+            <span class="tag">BM25 · RRF</span>
+            <span class="tag">Reranker</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Milvus</span>
+            <span class="tag">VLM</span>
+            <span class="tag">Qwen3-VL</span>
+            <span class="tag">LoRA</span>
+          </div>
+          <div class="tags-group">
+            <span class="tags-label">工程基础</span>
             <span class="tag">FastAPI</span>
             <span class="tag">Next.js</span>
-            <span class="tag">TensorRT</span>
-            <span class="tag">DeepStream</span>
-            <span class="tag">YOLO</span>
             <span class="tag">Python</span>
             <span class="tag">C++</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Linux</span>
+            <span class="tag">YOLO</span>
+            <span class="tag">TensorRT</span>
+            <span class="tag">DeepStream</span>
           </div>
         </div>
       </section>
@@ -482,7 +647,7 @@
     </div>
 
     <footer>
-      <p class="footer-meta">西安理工大学 软件工程硕士（2019–2022）· 发明专利 2 项（均已授权）· EI 论文 1 篇一作</p>
+      <p class="footer-meta">西安理工大学软件工程硕士（2019–2022）· 发明专利 4 项（其中第一发明人 2 项）· IEEE ICICSE 2021 一作论文</p>
       <div class="footer-links">
         <a class="footer-link" href="https://github.com/yaozhongai" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
