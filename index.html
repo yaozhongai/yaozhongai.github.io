@@ -211,6 +211,15 @@
     a.project-badge { text-decoration: none; transition: background 0.2s, color 0.2s; }
     a.project-badge:hover { background: var(--accent); color: #fff; }
 
+    .project-award {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .project-award .nowrap { white-space: nowrap; }
+
     .project-desc {
       font-size: 0.92rem;
       color: var(--text-secondary);
@@ -401,11 +410,11 @@
 
       <section>
         <h2 class="section-label">简介</h2>
-        <p>现就职于京东物流，负责物流场景的 AI 应用落地。</p>
+        <p>算法工程师，前京东物流。目前全职投入 Agent 系统研发（Nexa Agent / OfferCheck）。</p>
         <ul class="intro-list">
-          <li>前期负责 CV 视觉感知与边缘侧部署，落地多路视频实时推理链路</li>
-          <li>近期主导工业运维 RAG 知识问答系统，并延伸 VLM 巡检验证与 Agent 实践</li>
           <li>当前关注：Agent 可靠性工程、上下文与记忆管理、多模态应用</li>
+          <li>此前在京东物流主导工业运维 RAG 知识问答系统，并延伸 VLM 巡检验证与 Agent 实践</li>
+          <li>更早负责 CV 视觉感知与边缘侧部署，落地多路视频实时推理链路</li>
         </ul>
       </section>
 
@@ -419,6 +428,7 @@
             </div>
             <a class="project-badge" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">在线 Demo</a>
           </div>
+          <p class="project-award">入围 2026 世界人工智能大会（WAIC）<span class="nowrap">无界造物节决赛</span></p>
           <p class="project-desc">求职尽调 Agent：对一个具体求职机会自主上网做多源交叉调查，输出「可信 / 存疑 / 疑似骗局」三态裁定与证据链——无证据，不裁定。</p>
           <div class="project-features">
             <div class="feature-row"><span class="feature-name">职位调研</span><span class="feature-desc">核实公司经营真实性、资金与团队背景，识别幽灵岗位</span></div>
@@ -440,7 +450,7 @@
               GitHub →
             </a>
           </div>
-          <p class="project-caption">在线 Demo 为「无界造物节 Buildless Limits」参赛作品，界面为英文。</p>
+          <p class="project-caption">在线 Demo 为决赛参赛作品，面向海外市场，界面为英文。</p>
         </div>
       </section>
 
