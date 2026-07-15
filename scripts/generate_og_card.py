@@ -42,7 +42,7 @@ draw.text((144, 130), "yaozhongai.github.io", font=font(FONT_LATIN_BOLD, 42), fi
 draw.text((144, 220), "王耀中", font=font(FONT_CN_BOLD, 132), fill="#161616")
 draw.text(
     (144, 445),
-    "大模型应用算法工程师 · Agent · 多模态",
+    "大模型应用算法工程师（LLM Agent · RAG · 边缘智能）",
     font=font(FONT_CN, 54),
     fill="#5b5b5b",
 )
@@ -58,9 +58,9 @@ draw.text(
     fill="#5b5b5b",
 )
 
-pill(draw, (144, 1030), "可信", "#dcfce7", "#15803d")
+pill(draw, (144, 1030), "靠谱", "#dcfce7", "#15803d")
 pill(draw, (355, 1030), "存疑", "#fef3c7", "#b45309")
-pill(draw, (566, 1030), "高度疑似诈骗", "#fee2e2", "#b91c1c")
+pill(draw, (566, 1030), "大概率有坑", "#fee2e2", "#b91c1c")
 
 image.save(OUT, format="PNG", optimize=True)
 print(OUT)

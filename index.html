@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="王耀中，大模型应用算法工程师，关注 Agent、RAG 与多模态应用。个人项目 OfferCheck 入围 2026 WAIC 无界造物节决赛。">
+  <meta name="description" content="王耀中，大模型应用算法工程师，专注 LLM Agent、RAG 与边缘智能。OfferCheck 入围无界造物节 AI Coding 赛道决赛，将于 WAIC 2026 现场 Demo 路演。">
   <title>王耀中｜大模型应用算法工程师</title>
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='sans-serif'>%E7%8E%8B</text></svg>">
@@ -12,14 +12,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yaozhongai.github.io/">
   <meta property="og:title" content="王耀中｜大模型应用算法工程师">
-  <meta property="og:description" content="Agent / RAG / 多模态；OfferCheck 入围 2026 WAIC 无界造物节决赛。">
+  <meta property="og:description" content="LLM Agent / RAG / 边缘智能；OfferCheck 入围无界造物节 AI Coding 赛道决赛，并将在 WAIC 2026 现场 Demo 路演。">
   <meta property="og:image" content="https://yaozhongai.github.io/og-card.png">
   <meta property="og:image:width" content="2400">
   <meta property="og:image:height" content="1260">
-  <meta property="og:image:alt" content="王耀中 · 大模型应用算法工程师 · OfferCheck 求职机会核验 Agent">
+  <meta property="og:image:alt" content="王耀中 · 大模型应用算法工程师 · LLM Agent · RAG · 边缘智能">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="王耀中｜大模型应用算法工程师">
-  <meta name="twitter:description" content="Agent / RAG / 多模态；OfferCheck 入围 2026 WAIC 无界造物节决赛。">
+  <meta name="twitter:description" content="LLM Agent / RAG / 边缘智能；OfferCheck 入围无界造物节 AI Coding 赛道决赛，并将在 WAIC 2026 现场 Demo 路演。">
   <meta name="twitter:image" content="https://yaozhongai.github.io/og-card.png">
 
   <script>
@@ -136,31 +136,12 @@
       font-weight: 500;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
+    .summary {
+      max-width: 44em;
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
     }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 8px 15px;
-      color: var(--text);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s, border-color 0.2s, background 0.2s;
-    }
-    .button:hover { transform: translateY(-1px); border-color: var(--text-muted); }
-    .button-primary { color: #fff; background: var(--accent); border-color: var(--accent); }
-    .button-primary:hover { background: color-mix(in srgb, var(--accent) 88%, #000); border-color: transparent; }
 
     .quick-facts {
       display: grid;
@@ -202,28 +183,6 @@
       color: var(--text-secondary);
     }
 
-    .intro-list {
-      list-style: none;
-      padding: 0;
-      margin: 6px 0 0;
-    }
-
-    .intro-list li {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.9;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .intro-list li::before {
-      content: "·";
-      position: absolute;
-      left: 4px;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
     /* Project card */
     .project-card {
       border: 1px solid var(--project-border);
@@ -246,20 +205,6 @@
       color: var(--text);
     }
 
-    .project-badge {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--accent);
-      background: transparent;
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      padding: 2px 8px;
-      letter-spacing: 0.04em;
-    }
-
-    a.project-badge { text-decoration: none; transition: background 0.2s, color 0.2s; }
-    a.project-badge:hover { background: var(--accent); color: #fff; }
-
     .project-award {
       font-size: 0.85rem;
       font-weight: 600;
@@ -280,11 +225,6 @@
       display: flex;
       align-items: baseline;
       gap: 10px;
-    }
-
-    .project-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
     }
 
     .project-caption {
@@ -323,12 +263,6 @@
       border-radius: 8px;
       overflow: hidden;
       background: var(--bg-card);
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .project-visual:hover {
-      border-color: var(--text-muted);
-      transform: translateY(-1px);
     }
 
     .experience-grid {
@@ -337,20 +271,12 @@
       gap: 12px;
     }
 
-    .experience-heading {
+    .experience-company {
       margin-bottom: 12px;
-      padding: 18px 20px;
-      background: var(--project-bg);
-      border: 1px solid var(--project-border);
-      border-radius: 9px;
-    }
-
-    .experience-heading h3 {
       color: var(--text);
-      font-size: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
-
-    .experience-heading p { font-size: 0.88rem; }
 
     .experience-card {
       padding: 18px 20px;
@@ -387,6 +313,8 @@
       height: auto;
     }
 
+    .project-visual-mobile { display: none; }
+
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -405,56 +333,121 @@
       gap: 20px;
     }
 
-    /* Tags */
-    .tags {
+    /* Open-source project */
+    .opensource-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 22px;
+      margin-top: 12px;
+      padding: 20px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    .opensource-card h3 {
+      margin-bottom: 2px;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .opensource-origin {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .opensource-card p {
+      max-width: 58em;
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .opensource-results {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 8px 18px;
+      margin-top: 11px;
     }
 
-    .tags-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      width: 100%;
+    .opensource-result {
+      color: var(--text-secondary);
+      font-size: 0.76rem;
     }
 
-    .tags-group + .tags-group {
-      margin-top: 4px;
-    }
-
-    .tag {
-      font-size: 0.78rem;
+    .opensource-result strong {
+      margin-right: 4px;
+      color: var(--text);
+      font-size: 0.84rem;
       font-weight: 500;
-      color: var(--tag-text);
-      background: var(--tag-bg);
-      border-radius: 4px;
-      padding: 3px 10px;
-      letter-spacing: 0.02em;
-      transition: background 0.3s, color 0.3s;
     }
 
-    .tags-label {
-      width: 100%;
+    /* Outcomes */
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .outcome-group {
+      padding-left: 14px;
+      border-left: 2px solid var(--border);
+    }
+
+    .outcome-kicker {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-muted);
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.03em;
-      color: var(--text-muted);
-      margin-bottom: 2px;
+      letter-spacing: 0.02em;
     }
+
+    .patent-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .patent-direction {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .patent-title {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .patent-number {
+      display: inline-block;
+      margin-top: 2px;
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .patent-number:hover { color: var(--text); border-color: var(--text); }
 
     /* Footer */
     footer {
-      margin-top: 8px;
-      padding: 18px 0 28px;
-      border-top: 1px solid var(--border);
+      padding: 0 0 28px;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 10px;
+      justify-content: flex-start;
     }
 
     .footer-link {
@@ -472,20 +465,143 @@
     .footer-link:hover { color: var(--text); border-color: var(--text); }
     .footer-link svg { width: 14px; height: 14px; flex-shrink: 0; }
 
+    .footer-button {
+      appearance: none;
+      font-family: inherit;
+      line-height: inherit;
+      background: none;
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      margin: 0;
+      padding: 0 0 1px;
+      cursor: pointer;
+    }
+    .footer-button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    .email-panel {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 16px 0 0;
+    }
+    .email-panel[hidden] { display: none; }
+
+    .email-address {
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      user-select: all;
+    }
+
+    .email-copy-button {
+      appearance: none;
+      padding: 3px 9px;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      border: 0;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .email-copy-button:hover { color: var(--text); }
+    .email-copy-button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .wechat-panel {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: fit-content;
+      max-width: 100%;
+      margin: 16px 0 0;
+    }
+    .wechat-panel[hidden] { display: none; }
+
+    .wechat-qrcode {
+      display: block;
+      width: 148px;
+      height: 148px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+    .wechat-note {
+      max-width: 14em;
+      font-size: 0.8rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+    .wechat-note strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 0.84rem;
+    }
+
     .footer-copy {
       font-size: 0.75rem;
       color: var(--text-muted);
     }
 
+    .footer-bottom {
+      margin-top: 30px;
+      padding-top: 13px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
     /* Responsive */
+    @media (max-width: 640px) {
+      .quick-facts { grid-template-columns: 1fr; gap: 4px; }
+      .experience-grid { grid-template-columns: 1fr; }
+      .opensource-card { grid-template-columns: 1fr; align-items: start; }
+      .outcome-grid { grid-template-columns: 1fr; }
+      .footer-link { min-height: 44px; padding: 8px 2px; }
+      .email-copy-button { min-height: 40px; }
+    }
+
+    @media (max-width: 520px) {
+      .project-visual-desktop { display: none; }
+      .project-visual-mobile {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0;
+      }
+      .visual-crop {
+        aspect-ratio: 8 / 9;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--bg-card);
+      }
+      .visual-crop img {
+        display: block;
+        width: 200%;
+        max-width: none;
+        height: 100%;
+        object-fit: cover;
+      }
+      .visual-crop-right img { transform: translateX(-50%); }
+    }
+
     @media (max-width: 480px) {
       .container { padding: 40px 20px 0; }
       .name { font-size: 1.6rem; }
       .section-label { font-size: 0.82rem; }
       p { font-size: 1rem; }
-      .theme-toggle { top: 12px; right: 14px; width: 36px; height: 36px; font-size: 16px; }
+      .theme-toggle { top: 12px; right: 14px; width: 44px; height: 44px; font-size: 17px; }
       .project-card { padding: 16px 18px; }
-      .quick-facts, .experience-grid { grid-template-columns: 1fr 1fr; }
+      .footer-links { justify-content: flex-start; }
       .project-header { align-items: flex-start; gap: 12px; }
       .project-title-group { flex-wrap: wrap; gap: 4px 8px; }
       .feature-row { display: block; }
@@ -501,23 +617,14 @@
 
       <header>
         <h1 class="name">王耀中</h1>
-        <p class="title">大模型应用算法工程师 · Agent · 多模态</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">体验 OfferCheck</a>
-          <a class="button" href="https://github.com/yaozhongai" target="_blank" rel="noopener noreferrer">查看 GitHub</a>
-          <a class="button" href="mailto:wyz931216309@163.com">联系我</a>
-        </div>
+        <p class="title">大模型应用算法工程师（LLM Agent · RAG · 边缘智能）</p>
+        <p class="summary">前京东算法工程师，目前主要投入 LLM Agent 与 RAG 应用开发。</p>
         <div class="quick-facts" aria-label="个人亮点">
-          <div class="quick-fact"><strong>WAIC 2026 决赛</strong><span>OfferCheck · 无界造物节</span></div>
-          <div class="quick-fact"><strong>工业 RAG / VLM</strong><span>前京东算法工程师</span></div>
-          <div class="quick-fact"><strong>第一发明人专利 2 项</strong><span>另有授权发明专利 2 项 · IEEE 一作</span></div>
+          <div class="quick-fact"><strong>独立构建 Agent</strong><span>无界造物节决赛 · WAIC 现场路演</span></div>
+          <div class="quick-fact"><strong>仓储设备维保 RAG</strong><span>生产落地 · 30 个仓储现场</span></div>
+          <div class="quick-fact"><strong>边缘视觉系统研发</strong><span>Jetson · 华为 SDC · 14+ 园区</span></div>
         </div>
       </header>
-
-      <section>
-        <h2 class="section-label">关于我</h2>
-        <p>算法工程师，曾就职于京东，关注智能系统在复杂业务场景中的落地与演进。技术方向横跨边缘智能、计算机视觉与大模型应用，目前聚焦 Agent、RAG 和多模态系统，致力于构建兼具推理能力、工程可靠性与实际价值的 AI 产品。</p>
-      </section>
 
       <section>
         <h2 class="section-label">代表项目</h2>
@@ -525,90 +632,105 @@
           <div class="project-header">
             <div class="project-title-group">
               <h3 class="project-name">OfferCheck</h3>
-              <span class="project-note">Nexa Agent 的首个垂直应用</span>
             </div>
-            <a class="project-badge" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">在线 Demo</a>
           </div>
-          <p class="project-award">2026 世界人工智能大会（WAIC）<span class="nowrap">无界造物节决赛入围作品</span></p>
-          <p class="project-desc"><strong>OfferCheck 是一款求职机会核验 Agent。</strong>用户提交 Offer、JD、招聘消息或截图后，系统会围绕具体机会自主调查、交叉验证并主动寻找反证，最终给出「可信 / 存疑 / 高度疑似诈骗」判断及证据链。</p>
+          <p class="project-award">GMI Cloud「无界造物节」AI Coding 赛道决赛入围 · <span class="nowrap">WAIC 2026 现场 Demo 路演</span></p>
+          <p class="project-desc"><strong>OfferCheck 是我独立设计并开发的求职机会核验 Agent。</strong>用户提交具体 Offer、JD、招聘消息或截图后，系统会自主调用搜索、网页抓取、域名查询等工具开展多源调查，交叉验证并主动寻找反证，输出「靠谱 / 存疑 / 大概率有坑」三态判断及可追溯证据链。</p>
           <div class="project-features">
-            <div class="feature-row"><span class="feature-name">机会级核验</span><span class="feature-desc">核对公司、招聘方身份、邮箱域名、招聘流程与资金要求</span></div>
-            <div class="feature-row"><span class="feature-name">证据约束</span><span class="feature-desc">无有效检索不裁定，引用与真实访问记录逐条对账</span></div>
-            <div class="feature-row"><span class="feature-name">自主调查</span><span class="feature-desc">ReAct 动态取证，Reflexion 在失败后调整策略并重试</span></div>
+            <div class="feature-row"><span class="feature-name">Agent 架构</span><span class="feature-desc">ReAct + Reflexion 双循环，结合原生 Function Calling 与多类工具完成自主调查</span></div>
+            <div class="feature-row"><span class="feature-name">证据约束</span><span class="feature-desc">零检索禁止裁定，引用与真实调用记录对账，Verifier 复核关键事实</span></div>
+            <div class="feature-row"><span class="feature-name">工程实现</span><span class="feature-desc">模型分层路由、搜索源降级与 Trace / SSE，兼顾调查质量和工程可用性</span></div>
           </div>
-          <a class="project-visual" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer" aria-label="打开 OfferCheck 在线 Demo">
-            <img src="offercheck-promo.png" alt="OfferCheck 产品界面：围绕具体求职机会开展多源调查、独立复核并输出附带证据的风险结论" loading="lazy" />
-          </a>
+          <div class="project-visual project-visual-desktop">
+            <img src="offercheck-promo.png" alt="OfferCheck 产品界面：围绕具体求职机会开展多源调查、独立复核并输出附带证据的风险结论" width="3200" height="1800" loading="lazy" decoding="async" />
+          </div>
+          <div class="project-visual-mobile">
+            <div class="visual-crop visual-crop-left">
+              <img src="offercheck-promo.png" alt="OfferCheck 项目介绍与工作流程" width="3200" height="1800" loading="lazy" decoding="async" />
+            </div>
+            <div class="visual-crop visual-crop-right">
+              <img src="offercheck-promo.png" alt="OfferCheck 多源调查、证据门控与风险结论界面" width="3200" height="1800" loading="lazy" decoding="async" />
+            </div>
+          </div>
           <div class="project-links">
-            <a class="project-link" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer">
+            <a class="project-link" href="https://offercheck.up.railway.app/" target="_blank" rel="noopener noreferrer" title="Railway 海外部署，中国大陆网络可能无法直接访问">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-              在线 Demo →
+              在线 Demo（海外）→
             </a>
             <a class="project-link" href="https://github.com/yaozhongai/OfferCheck" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub →
             </a>
+            <a class="project-link" href="https://mp.weixin.qq.com/s/j9hMHD9yhmOs-9CDK0u6IQ" target="_blank" rel="noopener noreferrer">
+              决赛公告 →
+            </a>
           </div>
-          <p class="project-caption">在线 Demo 面向海外求职场景，界面为英文；建议使用测试案例体验完整调查过程。</p>
+          <p class="project-caption">在线 Demo 部署于 Railway 海外节点，界面为英文；中国大陆网络可能无法直接访问。</p>
         </div>
-
+        <article class="opensource-card">
+          <div>
+            <h3>RAG Retrieval Evaluation</h3>
+            <span class="opensource-origin">从仓储设备维保 RAG 生产项目拆分的独立评测模块</span>
+            <p>针对生产系统中的向量检索 + BM25 + RRF 融合 + Reranker 链路，基于 MIRACL 中文数据集进行独立开源评测与组件消融，定位 Reranker 与候选池规模为关键影响因素。</p>
+            <div class="opensource-results" aria-label="实验结果">
+              <span class="opensource-result"><strong>92.9%</strong>Recall@10</span>
+              <span class="opensource-result"><strong>0.773</strong>nDCG@10</span>
+              <span class="opensource-result"><strong>393</strong>条中文查询</span>
+            </div>
+          </div>
+          <a class="project-link" href="https://github.com/yaozhongai/rag-retrieval-eval" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </article>
       </section>
 
       <section>
-        <h2 class="section-label">工程经历</h2>
-        <div class="experience-heading">
-          <h3>京东｜算法工程师</h3>
-          <span class="experience-meta">2022.07–2026.06 · 北京</span>
-          <p>面向京东仓储与智能设备场景，参与并推动多类 AI 系统的研发与落地，围绕复杂现场环境中的感知、推理和系统协同解决关键技术问题；技术方向由边缘智能逐步拓展至 RAG、VLM 与 Agent，并持续关注智能体框架的工程实现与演进。</p>
-        </div>
+        <h2 class="section-label">代表经历</h2>
+        <p class="experience-company">京东｜算法工程师</p>
         <div class="experience-grid">
           <article class="experience-card">
-            <h3>大模型应用</h3>
-            <span class="experience-meta">RAG · VLM · Agent</span>
-            <p>主导工业运维 RAG 知识问答系统，从文档解析、知识切分、混合检索、重排、Prompt 优化到服务落地；同时开展 VLM 巡检验证与 Agent 应用实践。检索评测部分从项目中拆出为<a class="experience-link" href="https://github.com/yaozhongai/rag-retrieval-eval" target="_blank" rel="noopener noreferrer">公开评测子模块</a>。</p>
+            <h3>仓储自动化搬运设备维保知识问答系统</h3>
+            <span class="experience-meta">RAG · 生产 · 30 个仓储现场</span>
+            <p>作为 RAG 方向算法负责人，独立完成技术选型、知识接入、混合检索、重排、效果评测与服务部署，推动系统应用于 30 个仓储现场，并将检索链路拆分为<a class="experience-link" href="https://github.com/yaozhongai/rag-retrieval-eval" target="_blank" rel="noopener noreferrer">独立开源评测模块</a>。</p>
           </article>
           <article class="experience-card">
-            <h3>边缘智能研发</h3>
-            <span class="experience-meta">CV · TensorRT · DeepStream · NNIE</span>
-            <p>面向物流园区与仓储设备场景开展边缘智能研发，覆盖视觉感知、推理性能优化与实时分析系统建设，推动算法在 NVIDIA、海思等异构平台及复杂现场环境中稳定运行。</p>
+            <h3>边缘视觉系统研发</h3>
+            <span class="experience-meta">视频分析 · 14+ 分拣园区</span>
+            <p>面向物流园区安全监管场景，负责视觉算法研发、边缘系统建设与现场交付；以 NVIDIA Jetson 为主要载体构建多路视频实时分析系统，并在独立项目中完成算法向华为 SDC 摄像头（NNIE 推理框架）的适配，相关方案推广至 14+ 分拣园区。</p>
           </article>
         </div>
       </section>
 
-      <section>
-        <h2 class="section-label">技术栈</h2>
-        <div class="tags">
-          <div class="tags-group">
-            <span class="tags-label">Agent 工程</span>
-            <span class="tag">ReAct</span>
-            <span class="tag">Reflexion</span>
-            <span class="tag">Tool Calling</span>
-            <span class="tag">Eval Harness</span>
-            <span class="tag">Trace / SSE</span>
+      <section class="outcomes-section">
+        <h2 class="section-label">成果</h2>
+        <div class="outcome-grid">
+          <div class="outcome-group">
+            <span class="outcome-kicker">第一发明人 · 公开 2 项</span>
+            <div class="patent-list">
+              <div class="patent-item">
+                <span class="patent-direction">计算机视觉 · 行为识别</span>
+                <span class="patent-title">一种吸烟行为检测方法和装置</span>
+                <a class="patent-number" href="https://patents.google.com/patent/CN120544269A/zh" target="_blank" rel="noopener noreferrer">CN120544269A</a>
+              </div>
+              <div class="patent-item">
+                <span class="patent-direction">计算机视觉 · 车牌识别</span>
+                <span class="patent-title">车牌信息生成方法、装置、电子设备和计算机可读介质</span>
+                <a class="patent-number" href="https://patents.google.com/patent/CN119027929A/zh" target="_blank" rel="noopener noreferrer">CN119027929A</a>
+              </div>
+            </div>
           </div>
-          <div class="tags-group">
-            <span class="tags-label">LLM · 多模态</span>
-            <span class="tag">RAG</span>
-            <span class="tag">Hybrid Retrieval</span>
-            <span class="tag">BM25 · RRF</span>
-            <span class="tag">Reranker</span>
-            <span class="tag">MCP</span>
-            <span class="tag">Milvus</span>
-            <span class="tag">VLM</span>
-            <span class="tag">Qwen3-VL</span>
-            <span class="tag">LoRA</span>
-          </div>
-          <div class="tags-group">
-            <span class="tags-label">工程基础</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Python</span>
-            <span class="tag">C++</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Linux</span>
-            <span class="tag">YOLO</span>
-            <span class="tag">TensorRT</span>
-            <span class="tag">DeepStream</span>
+          <div class="outcome-group">
+            <span class="outcome-kicker">第二发明人 · 授权 2 项</span>
+            <div class="patent-list">
+              <div class="patent-item">
+                <span class="patent-direction">遥感图像 · 场景分类</span>
+                <span class="patent-title">基于在线梯度提升的 SAR 图像场景分类方法</span>
+                <a class="patent-number" href="https://patents.google.com/patent/CN114781528B/zh" target="_blank" rel="noopener noreferrer">CN114781528B</a>
+              </div>
+              <div class="patent-item">
+                <span class="patent-direction">目标检测 · 作业安全</span>
+                <span class="patent-title">基于 YOLOv5 目标检测模型的安全帽佩戴检测方法</span>
+                <a class="patent-number" href="https://patents.google.com/patent/CN114170626B/zh" target="_blank" rel="noopener noreferrer">CN114170626B</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -616,17 +738,31 @@
     </div>
 
     <footer>
+      <h2 class="section-label">联系方式</h2>
       <div class="footer-links">
         <a class="footer-link" href="https://github.com/yaozhongai" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
-        <a class="footer-link" href="mailto:wyz931216309@163.com">
+        <button class="footer-link footer-button" id="emailToggle" type="button" aria-expanded="false" aria-controls="emailPanel">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-          wyz931216309@163.com
-        </a>
+          邮箱
+        </button>
+        <button class="footer-link footer-button" id="wechatToggle" type="button" aria-expanded="false" aria-controls="wechatPanel">微信</button>
       </div>
-      <p class="footer-copy">&copy; 2026 王耀中</p>
+      <div class="email-panel" id="emailPanel" hidden>
+        <span class="email-address">wyz931216309@163.com</span>
+        <button class="email-copy-button" id="emailCopy" type="button" data-email="wyz931216309@163.com" aria-label="复制邮箱地址">
+          <span id="emailCopyLabel" aria-live="polite">复制</span>
+        </button>
+      </div>
+      <div class="wechat-panel" id="wechatPanel" hidden>
+        <img class="wechat-qrcode" src="wechat-qrcode.png" alt="王耀中的微信二维码" loading="lazy" />
+        <p class="wechat-note"><strong>微信联系</strong>扫码添加，请备注“个人主页 / 招聘 / 技术交流”。</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 王耀中</p>
+      </div>
     </footer>
   </div>
 
@@ -640,6 +776,59 @@
       html.setAttribute('data-theme', isDark ? 'light' : 'dark');
       toggle.textContent = isDark ? '🌙' : '☀️';
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    const emailToggle = document.getElementById('emailToggle');
+    const emailPanel = document.getElementById('emailPanel');
+    const wechatToggle = document.getElementById('wechatToggle');
+    const wechatPanel = document.getElementById('wechatPanel');
+
+    emailToggle.addEventListener('click', () => {
+      const shouldOpen = emailPanel.hidden;
+      emailPanel.hidden = !shouldOpen;
+      emailToggle.setAttribute('aria-expanded', String(shouldOpen));
+      if (shouldOpen) {
+        wechatPanel.hidden = true;
+        wechatToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    wechatToggle.addEventListener('click', () => {
+      const shouldOpen = wechatPanel.hidden;
+      wechatPanel.hidden = !shouldOpen;
+      wechatToggle.setAttribute('aria-expanded', String(shouldOpen));
+      if (shouldOpen) {
+        emailPanel.hidden = true;
+        emailToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    const emailCopy = document.getElementById('emailCopy');
+    const emailCopyLabel = document.getElementById('emailCopyLabel');
+    const emailAddress = emailCopy.dataset.email;
+    let emailResetTimer;
+    emailCopy.addEventListener('click', async () => {
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(emailAddress);
+        copied = true;
+      } catch (error) {
+        const textarea = document.createElement('textarea');
+        textarea.value = emailAddress;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        copied = document.execCommand('copy');
+        textarea.remove();
+      }
+
+      emailCopyLabel.textContent = copied ? '已复制' : '复制失败';
+      clearTimeout(emailResetTimer);
+      emailResetTimer = setTimeout(() => {
+        emailCopyLabel.textContent = '复制';
+      }, 1800);
     });
 
   </script>

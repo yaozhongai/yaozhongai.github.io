@@ -1,9 +1,9 @@
 # yaozhongai.github.io
 
-王耀中的个人主页，聚焦大模型应用算法、Agent 系统与多模态工程。
+王耀中的个人主页，定位为大模型应用算法工程师，技术方向涵盖 LLM Agent、RAG 与边缘智能。
 
 - 在线地址：<https://yaozhongai.github.io/>
-- 主要项目：OfferCheck / Nexa Agent
+- 主要项目：OfferCheck
 - 技术形态：原生 HTML + CSS + JavaScript，无构建依赖
 
 本地预览：
