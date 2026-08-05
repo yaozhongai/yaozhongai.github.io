@@ -42,25 +42,25 @@ draw.text((144, 130), "yaozhongai.github.io", font=font(FONT_LATIN_BOLD, 42), fi
 draw.text((144, 220), "王耀中", font=font(FONT_CN_BOLD, 132), fill="#161616")
 draw.text(
     (144, 445),
-    "大模型应用算法工程师（LLM Agent · RAG · 边缘智能）",
+    "AI 算法工程师（Agent · 多模态 · 边缘推理）",
     font=font(FONT_CN, 54),
     fill="#5b5b5b",
 )
 
 draw.line((144, 700, 2256, 700), fill="#dfe6ef", width=2)
 
-draw.text((144, 775), "OfferCheck", font=font(FONT_LATIN_BOLD, 72), fill="#161616")
-draw.text((665, 790), "求职机会核验 Agent", font=font(FONT_CN_BOLD, 48), fill="#2563eb")
+draw.text((144, 775), "从现场感知到智能处置", font=font(FONT_CN_BOLD, 68), fill="#161616")
 draw.text(
     (144, 900),
-    "自主调查一次具体机会，输出三级风险判断与可追溯证据链——无证据，不裁定。",
+    "Agent、多模态、边缘推理与算法工程化实践。",
     font=font(FONT_CN, 42),
     fill="#5b5b5b",
 )
 
-pill(draw, (144, 1030), "靠谱", "#dcfce7", "#15803d")
-pill(draw, (355, 1030), "存疑", "#fef3c7", "#b45309")
-pill(draw, (566, 1030), "大概率有坑", "#fee2e2", "#b91c1c")
+pill(draw, (144, 1030), "Agent 系统", "#dbeafe", "#1d4ed8")
+pill(draw, (430, 1030), "多模态感知", "#dff5f2", "#0f766e")
+pill(draw, (792, 1030), "边缘推理", "#e9e5ff", "#6d28d9")
+pill(draw, (1074, 1030), "工程落地", "#f2eadf", "#9a5b18")
 
 image.save(OUT, format="PNG", optimize=True)
 print(OUT)
