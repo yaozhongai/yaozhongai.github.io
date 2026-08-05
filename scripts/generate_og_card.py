@@ -39,7 +39,7 @@ draw.ellipse((1690, -340, 2630, 600), fill="#eef4ff")
 draw.ellipse((1780, -250, 2540, 510), outline="#dce8ff", width=5)
 
 draw.text((144, 130), "yaozhongai.github.io", font=font(FONT_LATIN_BOLD, 42), fill="#8a8a8a")
-draw.text((144, 220), "AI 算法工程师", font=font(FONT_CN_BOLD, 96), fill="#161616")
+draw.text((144, 220), "王耀中 · AI 算法工程师", font=font(FONT_CN_BOLD, 76), fill="#161616")
 draw.text(
     (144, 410),
     "多模态大模型 · Agent · 算法工程化",
