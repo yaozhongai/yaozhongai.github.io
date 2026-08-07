@@ -470,6 +470,16 @@
       font-weight: 700;
     }
 
+    .work-cover {
+      width: calc(100% + 56px);
+      margin: -28px -28px 18px;
+      border-bottom: 1px solid var(--line);
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
+
     .work-card h3 {
       margin-top: 8px;
       color: var(--text);
@@ -848,10 +858,11 @@
 
         <div class="work-grid">
           <article class="work-card">
+            <img class="work-cover" src="offercheck-promo.png" alt="OfferCheck 产品界面：粘贴 Offer/JD 后 Agent 多源调查并给出证据链核验结论" loading="lazy">
             <span class="work-meta">独立设计与开发的 demo · GMI Cloud 无界造物节 AI Coding 赛道第三名</span>
-            <h3>OfferCheck · 求职机会核验 Agent</h3>
-            <p>粘贴 offer、JD 或招聘方消息，Agent 在真实网络上对具体机会做多源调查取证，输出三级判定与逐条绑定来源的证据链。ReAct + Reflexion 双循环引擎，12 类调查工具，四层 grounding 防线（强制证据门 → 结构化 submit_verdict 终止 → 来源对账 → Verifier 事实核验）从机制上阻断无证据结论；自建 Eval Harness（失败归因 + 2pp 回归门禁），32 例内部回归集通过率 72.7% → 81.8%，高风险样本零漏报；强/快/升级三档模型分层路由（DeepSeek + Moonshot Kimi K2.6），tool-call 失效自动升级并回落。FastAPI + Next.js 全栈独立交付，SSE 实时推送调查 trace。</p>
-            <div class="work-tags"><span>ReAct / Reflexion</span><span>Function Calling</span><span>Eval Harness</span><span>模型分层路由</span><span>Verifier</span><span>Trace / SSE</span></div>
+            <h3>OfferCheck</h3>
+            <p>面向具体求职机会开展多源调查和证据核验的 Agent。项目重点验证了工具调用、反证搜索、证据约束和可追溯输出如何共同降低模型的随意裁定。</p>
+            <div class="work-tags"><span>ReAct / Reflexion</span><span>Function Calling</span><span>Verifier</span><span>Trace / SSE</span></div>
             <div class="work-links">
               <a class="text-link" href="https://github.com/yaozhongai/OfferCheck" target="_blank" rel="noopener noreferrer">GitHub →</a>
               <a class="text-link" href="https://mp.weixin.qq.com/s/is7EDeZdwdbLMM_nfn96IA" target="_blank" rel="noopener noreferrer">赛事结果 →</a>
