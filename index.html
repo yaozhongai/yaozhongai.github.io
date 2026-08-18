@@ -132,7 +132,9 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 900px);
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 56px;
+      align-items: end;
       padding: 92px 0 72px;
     }
 
@@ -155,10 +157,36 @@
     }
 
     .hero-summary {
-      max-width: 46em;
       margin-top: 18px;
       color: var(--text-secondary);
       font-size: 1.03rem;
+    }
+
+    .hero-facts {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .hero-facts .fact + .fact {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-facts .k {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-facts .v {
+      margin-top: 2px;
+      color: var(--navy);
+      font-size: 0.9rem;
+      font-weight: 650;
+      line-height: 1.55;
     }
 
     .hero-actions {
@@ -731,6 +759,12 @@
             <a class="button-link" href="https://github.com/yaozhongai" target="_blank" rel="noopener noreferrer">查看 GitHub</a>
           </div>
         </div>
+        <aside class="hero-facts" aria-label="关键事实">
+          <div class="fact"><div class="k">经验</div><div class="v">4 年 AI 算法研发 · 近 1 年聚焦 Agent 系统</div></div>
+          <div class="fact"><div class="k">核心栈</div><div class="v">RAG · Skill 编排 · Tool Calling · HITL · 评测</div></div>
+          <div class="fact"><div class="k">独立作品</div><div class="v">OfferCheck · GMI Cloud 无界造物节 AI Coding 赛道第三名</div></div>
+          <div class="fact"><div class="k">求职方向</div><div class="v">大模型应用 / Agent 工程师</div></div>
+        </aside>
       </header>
 
       <div class="capability-strip" aria-label="能力方向">
