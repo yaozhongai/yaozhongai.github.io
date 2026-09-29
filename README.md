@@ -1,6 +1,6 @@
 # yaozhongai.github.io
 
-王耀中的个人主页，定位为大模型应用算法工程师，技术方向涵盖 LLM Agent、RAG 与边缘智能。
+王耀中的个人主页，AI 算法工程师，技术方向涵盖计算机视觉、VLM、大模型应用与边缘智能。
 
 - 在线地址：<https://yaozhongai.github.io/>
 - 主要项目：OfferCheck

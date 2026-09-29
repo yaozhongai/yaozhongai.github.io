@@ -18,7 +18,7 @@ def font(path: str, size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(path, size=size)
 
 
-def pill(draw: ImageDraw.ImageDraw, xy: tuple[int, int], text: str, bg: str, fg: str) -> None:
+def pill(draw: ImageDraw.ImageDraw, xy: tuple[int, int], text: str, bg: str, fg: str) -> int:
     x, y = xy
     label_font = font(FONT_CN_BOLD, 44)
     left, top, right, bottom = draw.textbbox((0, 0), text, font=label_font)
@@ -28,6 +28,7 @@ def pill(draw: ImageDraw.ImageDraw, xy: tuple[int, int], text: str, bg: str, fg:
     height = 88
     draw.rounded_rectangle((x, y, x + width, y + height), radius=44, fill=bg)
     draw.text((x + 36, y + (height - text_h) / 2 - top), text, font=label_font, fill=fg)
+    return width
 
 
 image = Image.new("RGB", (W, H), "#f8fafc")
@@ -42,25 +43,29 @@ draw.text((144, 130), "yaozhongai.github.io", font=font(FONT_LATIN_BOLD, 42), fi
 draw.text((144, 220), "王耀中 · AI 算法工程师", font=font(FONT_CN_BOLD, 76), fill="#161616")
 draw.text(
     (144, 410),
-    "多模态大模型 · Agent · 算法工程化",
+    "计算机视觉 · VLM · 端侧推理",
     font=font(FONT_CN, 50),
     fill="#5b5b5b",
 )
 
 draw.line((144, 700, 2256, 700), fill="#dfe6ef", width=2)
 
-draw.text((144, 775), "从现场感知到智能处置", font=font(FONT_CN_BOLD, 68), fill="#161616")
+draw.text((144, 775), "让视觉算法在真实场景中稳定运行", font=font(FONT_CN_BOLD, 68), fill="#161616")
 draw.text(
     (144, 900),
-    "Agent、多模态、边缘推理与算法工程化实践。",
+    "现就职于新石器，从事视觉 / VLM 方向。",
     font=font(FONT_CN, 42),
     fill="#5b5b5b",
 )
 
-pill(draw, (144, 1030), "Agent 系统", "#dbeafe", "#1d4ed8")
-pill(draw, (430, 1030), "多模态感知", "#dff5f2", "#0f766e")
-pill(draw, (792, 1030), "边缘推理", "#e9e5ff", "#6d28d9")
-pill(draw, (1074, 1030), "工程落地", "#f2eadf", "#9a5b18")
+pill_x = 144
+for text, bg, fg in [
+    ("视觉感知", "#dbeafe", "#1d4ed8"),
+    ("端侧推理", "#dff5f2", "#0f766e"),
+    ("数据闭环", "#e9e5ff", "#6d28d9"),
+    ("大模型应用", "#f2eadf", "#9a5b18"),
+]:
+    pill_x += pill(draw, (pill_x, 1030), text, bg, fg) + 24
 
 image.save(OUT, format="PNG", optimize=True)
 print(OUT)
