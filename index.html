@@ -235,39 +235,6 @@
       font-size: 0.9rem;
     }
 
-    .timeline-points {
-      display: grid;
-      gap: 7px;
-      margin-top: 9px;
-      list-style: none;
-    }
-
-    .timeline-points li {
-      position: relative;
-      padding-left: 15px;
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      line-height: 1.6;
-    }
-
-    .timeline-points li::before {
-      position: absolute;
-      top: 0.72em;
-      left: 0;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--teal);
-      content: "";
-    }
-
-    .timeline-points strong {
-      margin-right: 7px;
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-
     .ability-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -571,10 +538,10 @@
       <a class="nav-mark" href="#top">YAOZHONG WANG</a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#experience">工作经历</a>
+          <a href="#experience">经历</a>
           <a href="#abilities">能力</a>
           <a href="#work">作品</a>
-          <a href="#background">背景</a>
+          <a href="#background">专利</a>
           <a href="#contact">联系</a>
         </div>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">🌙</button>
@@ -612,15 +579,10 @@
           <article class="timeline-entry">
             <div class="timeline-head">
               <span class="timeline-org">京东</span>
-              <span class="timeline-role">算法工程师</span>
+              <span class="timeline-role">算法工程师 · 视觉 / VLM · Agent</span>
               <span class="timeline-date">2022.09 — 2026.07</span>
             </div>
             <p class="timeline-summary">负责物流仓储与自动化设备方向的 AI 算法研发与交付，覆盖边缘视觉、多模态平台与设备运维 Agent。</p>
-            <ul class="timeline-points">
-              <li><strong>边缘视觉</strong>建设多路视频实时推理、事件规则与样本回流链路，支撑全国 100+ 园区场景交付</li>
-              <li><strong>多模态平台</strong>统一数据、训练、评测与部署规范，沉淀领域 VLM 微调和业务评测能力</li>
-              <li><strong>运维 Agent</strong>主导架构与工具规范，推广至 30+ 仓，高频标准问题定位从 30 分钟以上缩短至 5 分钟内</li>
-            </ul>
           </article>
         </div>
       </section>
